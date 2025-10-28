@@ -92,4 +92,14 @@
   .menu {
     width: calc(100% - 50%);
   }
+}.profile-icon {
+  color: #3b82f6; /* moderna plava */
+  cursor: pointer;
+  transition: 0.3s ease;
 }
+
+.profile-icon:hover {
+  color: #1d4ed8; /* tamnija plava kad se pređe mišem */
+  transform: scale(1.15);
+}
+

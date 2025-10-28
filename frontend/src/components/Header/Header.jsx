@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useContext } from "react";
 import { Container, Row, Button } from "reactstrap";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-
+import { FaUserCircle } from "react-icons/fa";
 import logo from "../../assets/images/logo.png";
 import "./header.css";
 
@@ -72,7 +72,7 @@ const Header = () => {
                   <li className="nav__item" key={index}>
                     <NavLink
                       to={item.path}
-                      className={navClass =>
+                      className={(navClass) =>
                         navClass.isActive ? "active__link" : ""
                       }
                     >
@@ -88,10 +88,15 @@ const Header = () => {
               <div className="nav__btns d-flex align-items-center gap-4 ">
                 {user ? (
                   <>
-                    <h5 className="mb-0">{user.username}</h5>
-                    <Button className="btn btn-dark" onClick={logout}>
-                      Logout
-                    </Button>
+                    <div className="user-info d-flex align-items-center gap-3">
+                      <h5 className="mb-0">{user.username}</h5>
+                      <Link to="/bookings" title="My Bookings">
+                        <FaUserCircle size={26} className="profile-icon" />
+                      </Link>
+                      <Button className="btn btn-dark" onClick={logout}>
+                        Logout
+                      </Button>
+                    </div>
                   </>
                 ) : (
                   <>
@@ -106,7 +111,7 @@ const Header = () => {
               </div>
 
               <span className="mobile__menu" onClick={toggleMenu}>
-                <i class="ri-menu-line"></i>
+                <i className="ri-menu-line"></i>
               </span>
             </div>
           </div>
