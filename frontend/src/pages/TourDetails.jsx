@@ -17,6 +17,8 @@ const TourDetails = () => {
   const [tourRating, setTourRating] = useState(null);
   const { user } = useContext(AuthContext);
 
+  const [weather, setWeather] = useState(null);
+
   // fetch data from database
   const { data: tour, loading, error } = useFetch(`${BASE_URL}/tours/${id}`);
 
@@ -35,11 +37,34 @@ const TourDetails = () => {
 
   const { totalRating, avgRating } = calculateAvgRating(reviews);
 
+  useEffect(() => {
+    const fetchWeather = async () => {
+      if (!city) return;
+      try {
+        const apiKey = "ab644df103626ea5c8310eebf59c96f6"; // 👉 zameni sa svojim API ključem
+        const res = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+        );
+        const data = await res.json();
+        if (data.main) {
+          setWeather({
+            temp: data.main.temp,
+            description: data.weather[0].description,
+            icon: data.weather[0].icon,
+          });
+        }
+      } catch (err) {
+        console.error("❌ Error fetching weather:", err);
+      }
+    };
+
+    fetchWeather();
+  }, [city]);
   // format date
   const options = { day: "numeric", month: "long", year: "numeric" };
 
   // submit request to the server
-  const submitHandler = async e => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     const reviewText = reviewMsgRef.current.value;
 
@@ -94,6 +119,22 @@ const TourDetails = () => {
 
                   <div className="tour__info">
                     <h2>{title}</h2>
+
+                    {/* 🌤️ DODAJ OVO — prikaz vremena */}
+                    {weather && (
+                      <div className="weather-box mt-2 mb-3">
+                        <img
+                          src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+                          alt="weather-icon"
+                          style={{ width: "50px", verticalAlign: "middle" }}
+                        />
+                        <span style={{ fontSize: "1rem", marginLeft: "10px" }}>
+                          <strong>Weather in {city}:</strong> {weather.temp}°C,{" "}
+                          {weather.description}
+                        </span>
+                      </div>
+                    )}
+                    {/* 🌤️ DOVDE */}
 
                     <div className="d-flex align-items-center gap-5">
                       <span className="tour__rating d-flex align-items-center gap-1">
