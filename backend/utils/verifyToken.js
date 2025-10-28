@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
-const authenticate = role => async (req, res, next) => {
+const authenticate = (role) => async (req, res, next) => {
   // Get token from header
   const authToken = req.headers.authorization;
 
@@ -24,7 +24,7 @@ const authenticate = role => async (req, res, next) => {
         .json({ success: false, message: "You're not authorized" });
     }
 
-    req.user = decoded.user;
+    req.user = user.decoded;
     next();
   } catch (err) {
     res.status(500).send("Server Error");
