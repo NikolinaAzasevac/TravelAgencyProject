@@ -10,7 +10,7 @@ const UserBookings = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      if (!user?.email) return;
+      if (!user?.email || user?.role === "admin") return;
       const token = localStorage.getItem("token");
 
       const res = await fetch(`${BASE_URL}/booking/user/${user.email}`, {

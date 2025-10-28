@@ -90,9 +90,24 @@ const Header = () => {
                   <>
                     <div className="user-info d-flex align-items-center gap-3">
                       <h5 className="mb-0">{user.username}</h5>
-                      <Link to="/bookings" title="My Bookings">
-                        <FaUserCircle size={26} className="profile-icon" />
-                      </Link>
+                      {user?.role === "admin" ? (
+                        <Link to="/admin" title="Admin Panel">
+                          <FaUserCircle
+                            size={26}
+                            className="profile-icon"
+                            style={{ color: "#007bff" }} // moderna plava
+                          />
+                        </Link>
+                      ) : (
+                        <Link to="/bookings" title="My Bookings">
+                          <FaUserCircle
+                            size={26}
+                            className="profile-icon"
+                            style={{ color: "#007bff" }} // ista moderna plava
+                          />
+                        </Link>
+                      )}
+
                       <Button className="btn btn-dark" onClick={logout}>
                         Logout
                       </Button>
