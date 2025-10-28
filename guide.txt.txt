@@ -1,0 +1,21 @@
+
+Note: 1. All the images size are a little bit big, so please download the images by following this google drive link  ==>
+https://drive.google.com/file/d/1oJ7MGXEcZnL8DVLksw_a2_YcRA8vD2tC/view?usp=share_link  ||| and then paste them into frontend assets directory 
+
+2. images directory that you find make sure to move only the tour-images directory to the frontend public folder.
+3. Go to the mongoDB atlas https://www.mongodb.com/atlas/database 
+   . Click on sign in. if you don't have an account create a new account for free
+   . Sign in and setup your new project
+   . after compliting setup click connect and then conncet your application
+   . Copy the link and paste it on .env file and make sure username and password are correct
+   . for JWT_SECRET create own secret key you can give random key. but make sure it should be strong.
+4.to run this project
+  => first go to the backend directory and install all the dependencies by npm i command
+  => after installing run this commad npm run start-dev (make sure to backend is running)
+  => then go to the frontend directory and install all the dependencies by npm i command
+  => then run this command npm start
+
+N.B: these couple of step you have to follow things you have to do. or you can use different images if you want. 
+
+thanks
+Muhib
