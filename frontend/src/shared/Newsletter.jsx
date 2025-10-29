@@ -19,8 +19,9 @@ const Newsletter = () => {
               </div>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Obcaecati adipisci sunt in, provident facere ipsam.
+                Stay inspired with our latest travel stories, destination tips,
+                and exclusive offers — directly to your inbox. Be the first to
+                discover new places and plan your next adventure with ease.
               </p>
             </div>
           </Col>

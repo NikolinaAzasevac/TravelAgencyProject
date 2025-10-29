@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Island+Moments&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
+/* 🌌 Deep Blue Theme */
 :root {
-  --primary-color: #ff7e01;
-  --secondary-color: #faa935;
-  --heading-color: #0b2727;
-  --text-color: #6e7074;
+  --primary-color: #0d47a1; /* duboka hladna plava */
+  --secondary-color: #1565c0; /* svetlija akcentna plava */
+  --heading-color: #0a192f; /* tamna mornarska */
+  --text-color: #5c6b80; /* sivo-plava za tekst */
   --font-name: "Montserrat", sans-serif;
   --subtitle-font-name: "Island Moments", cursive;
 }
@@ -18,6 +19,7 @@
 
 body {
   font-family: var(--font-name);
+  background-color: #f3f6fa; /* vrlo blago plavkasto-siva pozadina */
 }
 
 section {
@@ -37,55 +39,68 @@ a {
   text-decoration: none;
   color: unset;
 }
+
 ul {
   list-style: none;
 }
 
+/* 🔹 Primary button */
 .primary__btn {
-  background: var(--secondary-color) !important;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
   border: none !important;
   border-radius: 50px !important;
   padding: 0.4rem 1.5rem !important;
+  box-shadow: 0 3px 8px rgba(13, 71, 161, 0.4);
+  transition: all 0.3s ease;
+}
+
+.primary__btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
+  box-shadow: 0 5px 14px rgba(21, 101, 192, 0.5);
 }
 
 .primary__btn a {
   font-size: 1.1rem;
-  text-decoration: none;
-  color: #fff;
+  color: rgba(21, 101, 192, 0.5);;
+  letter-spacing: 0.3px;
 }
+
 .primary__btn a:hover {
-  color: inherit;
+  color:rgba(21, 101, 192, 0.5);;
 }
+
+/* 🔹 Secondary button */
 .secondary__btn {
   background: transparent !important;
-  color: #0b2727 !important;
-  border: none !important;
+  color: var(--heading-color) !important;
+  border: 2px solid var(--secondary-color) !important;
+  border-radius: 50px !important;
   font-weight: 500 !important;
+  padding: 0.4rem 1.3rem !important;
+  transition: all 0.3s ease;
 }
 
-.secondary__btn a {
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: var(--heading-color);
+.secondary__btn:hover {
+  background: var(--secondary-color) !important;
+  color: #fff !important;
+  border-color: var(--primary-color) !important;
 }
 
-.secondary__btn a:hover {
-  color: inherit;
-}
-
+/* 🔹 Subtitle badge */
 .section__subtitle {
   background: var(--secondary-color);
-
   width: max-content;
   padding: 0.5rem;
   padding-right: 1rem;
-
   border-radius: 50px;
   font-weight: 400;
   font-size: 1.1rem;
-  color: var(--heading-color);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(21, 101, 192, 0.3);
 }
 
+/* 🌙 Responsive adjustments */
 @media only screen and (max-width: 992px) {
   .primary__btn a,
   .secondary__btn a {
@@ -107,4 +122,54 @@ ul {
   .section__subtitle {
     font-size: 1.3rem;
   }
+}
+/* 🔹 Register dugme (puno plavo) */
+.primary__btn {
+  background: linear-gradient(135deg, #0d47a1, #1565c0) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.45rem 1.5rem !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 3px 10px rgba(13, 71, 161, 0.4);
+  transition: all 0.3s ease;
+}
+
+.primary__btn:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(21, 101, 192, 0.5);
+}
+
+.primary__btn a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* 🔹 Login dugme (proziran background, plavi tekst) */
+.secondary__btn {
+  background: transparent !important;
+  border: 2px solid #1565c0 !important;
+  border-radius: 50px !important;
+  padding: 0.45rem 1.5rem !important;
+  color: #1565c0 !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.secondary__btn:hover {
+  background: #1565c0 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3);
+}
+
+.secondary__btn a {
+  color: #1565c0 !important;
+  text-decoration: none !important;
+}
+
+.secondary__btn a:hover {
+  color: #ffffff !important;
 }

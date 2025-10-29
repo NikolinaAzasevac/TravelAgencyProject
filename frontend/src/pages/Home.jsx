@@ -5,7 +5,6 @@ import { Container, Row, Col } from "reactstrap";
 import heroImg from "../assets/images/hero-img01.jpg";
 import heroImg02 from "../assets/images/hero-img02.jpg";
 import heroVideo from "../assets/images/hero-video.mp4";
-import worldImg from "../assets/images/world.png";
 import experienceImg from "../assets/images/experience.png";
 import Subtitle from "./../shared/Subtitle";
 import SearchBar from "../shared/SearchBar";
@@ -24,17 +23,19 @@ const Home = () => {
               <div className="hero__content">
                 <div className="hero__subtitle d-flex align-items-center ">
                   <Subtitle subtitle={"Know Before You GO"} />
-                  <img src={worldImg} alt="" />
                 </div>
                 <h1>
                   Traveling opens the door to creating
                   <span className="highlight"> memories</span>
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Ullam ipsum nobis asperiores soluta voluptas quas voluptates.
-                  Molestiae tempora dignissimos, animi praesentium molestias
-                  perferendis porro expedita delectus. Soluta natus porro.
+                  <p>
+                    Plan your next unforgettable journey with us — where every
+                    destination becomes more than just a place on the map. From
+                    breathtaking mountain escapes to calm seaside towns, our
+                    agency connects travelers with authentic local experiences,
+                    making every moment unique and meaningful.
+                  </p>
                 </p>
               </div>
             </Col>
@@ -87,9 +88,13 @@ const Home = () => {
                   With our all experience <br /> we will serve you
                 </h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  <br />
-                  Quas aliquam, hic tempora inventore suscipit unde.
+                  <p>
+                    Over the years, we’ve helped thousands of travelers turn
+                    their dream vacations into reality. Our team of experienced
+                    travel planners ensures that every journey is smooth,
+                    memorable, and perfectly tailored to your wishes. Let our
+                    experience guide your adventure.
+                  </p>
                 </p>
               </div>
 

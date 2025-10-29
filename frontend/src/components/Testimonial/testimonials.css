@@ -1,0 +1,24 @@
+.testimonial__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* poravnava slike u istom redu */
+  gap: 2rem;
+  flex-wrap: nowrap;
+}
+
+.testimonial__item {
+  flex: 1 1 30%;
+  max-width: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.testimonial__item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}

@@ -37,8 +37,6 @@ const quick__links2 = [
 ];
 
 const Footer = () => {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="footer" id="about">
       <Container>
@@ -47,19 +45,15 @@ const Footer = () => {
             <div className="logo">
               <img src={logo} alt="" />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Commodi, enim.
+                Discover the beauty of the world with us — from hidden gems to
+                iconic destinations. We create journeys filled with
+                unforgettable experiences and moments that last a lifetime.
               </p>
 
               <div className="social__links d-flex align-items-center gap-4">
                 <span>
                   <Link to="#">
                     <i className="ri-youtube-line"></i>
-                  </Link>
-                </span>
-                <span>
-                  <Link to="#">
-                    <i className="ri-github-fill"></i>
                   </Link>
                 </span>
                 <span>
@@ -110,7 +104,7 @@ const Footer = () => {
                   Address:
                 </h6>
 
-                <p className="mb-0">Sylhet, Bangladesh</p>
+                <p className="mb-0">New York, USA</p>
               </ListGroupItem>
               <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-3">
                 <h6 className="mb-0 d-flex align-items-center gap-2">
@@ -120,7 +114,7 @@ const Footer = () => {
                   Email:
                 </h6>
 
-                <p className="mb-0">dev.muhib01@gmail.com</p>
+                <p className="mb-0">travel.agency@gmail.com</p>
               </ListGroupItem>
               <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-3">
                 <h6 className="mb-0 d-flex align-items-center gap-2">
@@ -137,8 +131,8 @@ const Footer = () => {
 
           <Col lg="12" className="text-center pt-5">
             <p className="copyright">
-              Copyright {year}, design and develop by Muhibur Rahman. All rights
-              reserved.
+              © 2025 TravelWorld Agency. Designed and developed by Nikolina
+              Azaševac. All rights reserved.
             </p>
           </Col>
         </Row>
